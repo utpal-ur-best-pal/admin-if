@@ -110,7 +110,7 @@
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span> Users </span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="users.html">View All</a></li>
-                                /
+                                
                                 <li><a href="useradd.html">Add New</a></li>
                             </ul>
                         </li>
@@ -118,7 +118,8 @@
                             <a href="#"><i class="glyphicon glyphicon-briefcase"></i><span> Business Listings </span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#">View All</a></li>
-                                <li><a href="#">Add New</a></li>
+                                
+                                <li><a href="listingadd.html">Add New</a></li>
                             </ul>
                         </li>
                         
@@ -144,135 +145,70 @@
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
             <div>
-    <ul class="breadcrumb">
-        <li>
-            <a href="dashboard.html"><strong>Dashboard</strong></a>
-        </li>
-    </ul>
-</div>
-<div class=" row">
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="6 new members; click to review" class="well top-block" href="#">
-            <i class="glyphicon glyphicon-user blue"></i>
-            <div>Total Users</div>
-            <div>1000</div>
-            <span class="notification">6</span>
-        </a>
-    </div>
-
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="4 new companies; click to review." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-briefcase green"></i>
-
-            <div>Total Companies</div>
-            <div>1500</div>
-            <span class="notification green">4</span>
-        </a>
-    </div>
-
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="34 new leads; click to review." class="well top-block" href="#">
-            <i class="glyphicon glyphicon-shopping-cart yellow"></i>
-
-            <div>Leads</div>
-            <div>300</div>
-            <span class="notification yellow">34</span>
-        </a>
-    </div>
-
-    <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="12 new messages; click to view" class="well top-block" href="#">
-            <i class="glyphicon glyphicon-envelope red"></i>
-
-            <div>Messages</div>
-            <div>25</div>
-            <span class="notification red">12</span>
-        </a>
-    </div>
 </div>
 
 <div class="row">
-    <div class="box col-md-6">
+    <div class="box col-md-12">
+        
         <div class="box-inner">
             <div class="box-header well">
-                <h2><i class="glyphicon glyphicon-info-sign"></i> City-wise Company Listings</h2>
-
-                <div class="box-icon">
-                    <a href="#" class="btn btn-setting btn-round btn-default"><i
-                            class="glyphicon glyphicon-cog"></i></a>
-                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                            class="glyphicon glyphicon-chevron-up"></i></a>
-                    <a href="#" class="btn btn-close btn-round btn-default"><i
-                            class="glyphicon glyphicon-remove"></i></a>
-                </div>
+                <h2><i class="glyphicon glyphicon-user"></i> Add New Listing</h2>
             </div>
             <div class="box-content row">
-                <div class="col-lg-7 col-md-12">
-                    
+            <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Oh!</strong> There was an error; please try again later.
             </div>
-            <div class="box-content">
-                <div id="piechart" style="height:230px"></div>
-            </div>
-        
-                
+            <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Well done!</strong> The listing has been successfully added.
+            </div>    
+            <div class="box-content col-md-7">
+                <form role="form" action="#" method="post">
+                    <input type="hidden" name="userid" id="userid"> <!-- this will be the current user session -->
 
+                    <div class="form-group ">
+                        <label for="name">Company Name</label>
+                        <input type="text" class="form-control" id="companyname" name="companyname" placeholder="Enter Company Name" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Company Logo</label>
+                        <input type="file" class="form-control" id="CompanyLogo" name="CompanyLogo" placeholder="" required="required">
+                        <em style="color: red;">Note it should be square; 200px by 200px</em>
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">Listing Type </label>
+                        <div class="controls">
+                        <select id="userType" data-rel="chosen" name="userType" required="required">
+                            <option></option>
+                            <option>Free</option>
+                            <option>Paid</option>
+                            <option>Trial</option>
+                            <option>Barter</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Start Date</label>
+                        <input type="text" class="form-control" id="CompanyLogo" name="CompanyLogo" placeholder="" required="required" readonly="readonly">
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">Company Type </label>
+                        <div class="controls">
+                        <select id="userType" data-rel="chosen" name="userType" required="required">
+                            <option></option>
+                            <option>Manufacturers</option>
+                            <option>Retailers</option>
+                            <option>Wholesalers</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </div>
+                </form>
             </div>
-        </div>
-    </div>
-    <div class="box col-md-6">
-        <div class="box-inner">
-            <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-list"></i> Weekly Stats</h2>
-
-                <div class="box-icon">
-                    <a href="#" class="btn btn-setting btn-round btn-default"><i
-                            class="glyphicon glyphicon-cog"></i></a>
-                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                            class="glyphicon glyphicon-chevron-up"></i></a>
-                    <a href="#" class="btn btn-close btn-round btn-default"><i
-                            class="glyphicon glyphicon-remove"></i></a>
-                </div>
-            </div>
-            <div class="box-content">
-                <ul class="dashboard-list">
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-arrow-up"></i>
-                            <span class="green">92</span>
-                            New Reviews
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-arrow-down"></i>
-                            <span class="red">15</span>
-                            New User Registration
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-minus"></i>
-                            <span class="blue">36</span>
-                            New Leads
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-arrow-up"></i>
-                            <span class="green">112</span>
-                            Company Listings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-arrow-down"></i>
-                            <span class="red">31</span>
-                            New Registrations
-                        </a>
-                    </li>
-                    
-                </ul>
             </div>
         </div>
     </div>
@@ -281,29 +217,9 @@
 
 </div><!--/fluid-row-->
 
-    <hr>
+<hr>
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3>Settings</h3>
-                </div>
-                <div class="modal-body">
-                    <p>Here settings can be configured...</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    
 <!-- chart libraries start -->
 <script src="bower_components/flot/excanvas.min.js"></script>
 <script src="bower_components/flot/jquery.flot.js"></script>
